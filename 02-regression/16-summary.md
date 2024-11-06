@@ -1,15 +1,10 @@
-
 ## 2.16 Car price prediction project summary
 
 <a href="https://www.youtube.com/watch?v=_qI01YXbyro&list=PL3MmuxUbc_hIhxl5Ji8t4O6lPAOpHaCLR&index=27"><img src="images/thumbnail-2-16.jpg"></a>
 
-
-
 ## Notes
 
-In summary, this session covered some topics, including data preparation, exploratory data analysis, the validation framework, linear regression model, LR vector and 
-normal forms, the baseline model, root mean squared error, feature engineering, regularization, tuning the model, and using the best model with new data. All these concepts 
-were explained using the problem to predict the price of cars. 
+In summary, this session covered some topics, including data preparation, exploratory data analysis, the validation framework, linear regression model, LR vector and normal forms, the baseline model, root mean squared error, feature engineering, regularization, tuning the model, and using the best model with new data. All these concepts were explained using the problem to predict the price of cars.
 
 <table>
    <tr>
@@ -21,11 +16,11 @@ were explained using the problem to predict the price of cars.
    </tr>
 </table>
 
-* [Notes from Maximilien Eyengue](https://github.com/maxim-eyengue/Python-Codes/blob/main/ML_Zoomcamp_2024/02_regression/Summary_Session_02.md)
+- [Notes from Maximilien Eyengue](https://github.com/maxim-eyengue/Python-Codes/blob/main/ML_Zoomcamp_2024/02_regression/Summary_Session_02.md)
 
 ## Navigation
 
-* [Machine Learning Zoomcamp course](../)
-* [Session 2: Machine Learning for Regression](./)
-* Previous: [Using the model](15-using-model.md)
-* Next: [Explore more](17-explore-more.md)
+- [Machine Learning Zoomcamp course](../)
+- [Session 2: Machine Learning for Regression](./)
+- Previous: [Using the model](15-using-model.md)
+- Next: [Explore more](17-explore-more.md)
