@@ -1,34 +1,44 @@
-
 ## 3.9 Logistic regression
 
 <a href="https://www.youtube.com/watch?v=7KFE2ltnBAg&list=PL3MmuxUbc_hIhxl5Ji8t4O6lPAOpHaCLR"><img src="images/thumbnail-3-09.jpg"></a>
 
 [Slides](https://www.slideshare.net/AlexeyGrigorev/ml-zoomcamp-3-machine-learning-for-classification)
 
-
 ## Notes
 
-In general, supervised models can be represented with this formula: 
+In general, supervised models can be represented with this formula:
 
 <p align="center">
-    $\large g\left(x_{i}\right) = y_{i}$
+    $g(x_{i})$ = $y_{i}$
 </p>
 
-Depending on what is the type of target variable, the supervised task can be regression or classification (binary or multiclass). Binary classification tasks can have negative (0) or positive (1) target values. The output of these models is the probability of $x_i$ belonging to the positive class.  
+![09-logistic-regression](./images/09-logistic-regression.png)
 
-Logistic regression is similar to linear regression because both models take into account the bias term and weighted sum of features. The difference between these models is that the output of linear regression is a real number, while logistic regression outputs a value between zero and one, applying the sigmoid function to the linear regression formula. 
+![09-logistic-regression-output](./images/09-logistic-regression-output.png)
 
-<p align="center">
-    $\large g\left(x_{i}\right) = Sigmoid\left(w_{0} + w_{1}x_{1} + w_{2}x_{2} + ... + w_{n}x_{n}\right)$
-</p>
+Depending on what is the type of target variable, the supervised task can be regression or classification (binary or multiclass). Binary classification tasks can have negative (0) or positive (1) target values. The output of these models is the probability of $x_i$ belonging to the positive class.
 
-<p align="center">
-    $\large Sigmoid\left(z\right)=\frac{1}{1 + exp\left( -z \right)}$
-</p>
+Logistic regression is similar to linear regression because both models take into account the bias term and weighted sum of features. The difference between these models is that the output of linear regression is a real number, while logistic regression outputs a value between zero and one, applying the sigmoid function to the linear regression formula.
 
-In this way, the sigmoid function allows transforming a score into a probability. 
+### Linear rergression:
 
-The entire code of this project is available in [this jupyter notebook](https://github.com/alexeygrigorev/mlbookcamp-code/blob/master/chapter-03-churn-prediction/03-churn.ipynb). 
+$g(x_{i})$ = $w_{0}$ + $w_{1}x_{1}$ + $w_{2}x_{2}$ + ... + $w_{n}x_{n}$ = $w_{0}$ + $w^{T}x_{i}$ ==> outpus a number $-\infty$ ... $\infty$
+
+- $x_{0}$ – bias term
+- $w^{T}$ – weights vector
+- $x_{i}$​ – features
+
+### Logistic regression:
+
+$g(x_{i})$ = SIGMOID($w_{0}$ + $w^{T}x_{i}$) ==> outpus a number 0 ... 1
+
+Sigmoid(z) = $\frac{1}{(1+ exp(-z))}$
+
+In this way, the sigmoid function allows transforming a score into a probability.
+
+![09-sigmoid-function](./images/09-sigmoid-function.png)
+
+The entire code of this project is available in [this jupyter notebook](https://github.com/alexeygrigorev/mlbookcamp-code/blob/master/chapter-03-churn-prediction/03-churn.ipynb).
 
 <table>
    <tr>
@@ -40,11 +50,11 @@ The entire code of this project is available in [this jupyter notebook](https://
    </tr>
 </table>
 
-* [Notes from Peter Ernicke](https://knowmledge.com/2023/09/30/ml-zoomcamp-2023-machine-learning-for-classification-part-9/)
+- [Notes from Peter Ernicke](https://knowmledge.com/2023/09/30/ml-zoomcamp-2023-machine-learning-for-classification-part-9/)
 
 ## Navigation
 
-* [Machine Learning Zoomcamp course](../)
-* [Session 3: Machine Learning for Classification](./)
-* Previous: [One-hot encoding](08-ohe.md)
-* Next: [Training logistic regression with Scikit-Learn](10-training-log-reg.md)
+- [Machine Learning Zoomcamp course](../)
+- [Session 3: Machine Learning for Classification](./)
+- Previous: [One-hot encoding](08-ohe.md)
+- Next: [Training logistic regression with Scikit-Learn](10-training-log-reg.md)
