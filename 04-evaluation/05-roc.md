@@ -1,42 +1,43 @@
-
 ## 4.5 ROC Curves
 
 <a href="https://www.youtube.com/watch?v=dnBZLk53sQI&list=PL3MmuxUbc_hIhxl5Ji8t4O6lPAOpHaCLR"><img src="images/thumbnail-4-05.jpg"></a>
 
 <a href="https://www.youtube.com/watch?v=B5PATo1J6yw&list=PL3MmuxUbc_hIhxl5Ji8t4O6lPAOpHaCLR"><img src="images/thumbnail-4-05-cont.jpg"></a>
 
-
 [Slides](https://www.slideshare.net/AlexeyGrigorev/ml-zoomcamp-4-evaluation-metrics-for-classification)
-
 
 ## Notes
 
 ROC stands for Receiver Operating Characteristic, and this idea was applied during the Second World War for evaluating the strength of radio detectors. This measure considers **False Positive Rate** (FPR) and **True Postive Rate** (TPR), which are derived from the values of the confusion matrix.
 
-**FPR** is the fraction of false positives (FP) divided by the total number of negatives (FP and TN - the first row of confusion matrix), and we want to `minimize` it. The formula of FPR is the following: 
+**FPR** is the fraction of false positives (FP) divided by the total number of negatives (FP and TN - the first row of confusion matrix), and we want to `minimize` it. The formula of FPR is the following:
 
-<p align="center">
-    $FPR = \large \frac{FP}{TN + FP}$
-</p>
+> $FPR = \large \frac{FP}{TN + FP}$
 
-In the other hand, **TPR** or **Recall** is the fraction of true positives (TP) divided by the total number of positives (FN and TP - second row of confusion table), and we want to `maximize` this metric. The formula of this measure is presented below: 
+In the other hand, **TPR** or **Recall** is the fraction of true positives (TP) divided by the total number of positives (FN and TP - second row of confusion table), and we want to `maximize` this metric. The formula of this measure is presented below:
 
-<p align="center">
-    $TPR =\large \frac{TP}{TP + FN}$
-</p>
+> $TPR = \large \frac{TP}{TP + FN}$
 
 ![TPR_FPR.png](images%2FTPR_FPR.png)
 
-ROC curves consider Recall and FPR under all the possible thresholds. If the threshold is 0 or 1, the FPR and Recall scores are the opposite of the threshold (1 and 0 respectively), but they have different meanings, as we explained before. 
+ROC curves consider Recall and FPR under all the possible thresholds. If the threshold is 0 or 1, the FPR and Recall scores are the opposite of the threshold (1 and 0 respectively), but they have different meanings, as we explained before.
 
-We need to compare the ROC curves against a point of reference to evaluate its performance, so the corresponding curves of random and ideal models are required. It is possible to plot the ROC curves with FPR and Recall scores vs thresholds, or FPR vs Recall. 
+We need to compare the ROC curves against a point of reference to evaluate its performance, so the corresponding curves of random and ideal models are required. It is possible to plot the ROC curves with FPR and Recall scores vs thresholds, or FPR vs Recall.
 
+**Classes and methods:**
 
-**Classes and methods:** 
-* `np.repeat([x,y], [z,w])` - returns a numpy array with a z number of x values first, and then a w number of y values. 
-* `roc_curve(x, y)` - sklearn.metrics class for calculating the false positive rates, true positive rates, and thresholds, given a target x dataset and a predicted y dataset. 
+- `np.repeat([x,y], [z,w])` - returns a numpy array with a z number of x values first, and then a w number of y values.
+- `roc_curve(x, y)` - sklearn.metrics class for calculating the false positive rates, true positive rates, and thresholds, given a target x dataset and a predicted y dataset.
 
-The entire code of this project is available in [this jupyter notebook](https://github.com/alexeygrigorev/mlbookcamp-code/blob/master/course-zoomcamp/04-evaluation/notebook.ipynb). 
+![05-roc-curves](./images/05-roc-curves.png)
+
+`Quote from Note of Peter Ernicke`
+
+### What information do we get from ROC curve?
+
+The ROC curve allows us to observe how the model behaves at different thresholds. Each point on the ROC curve represents TPR and FPR evaluated at a specific threshold. By plotting this curve, we can assess how far the model is from the ideal spot and how far it is from the random baseline. Additionally, the ROC curve is useful for comparing different models, as it’s easy to determine which one is superior (a model closer to the ideal spot is better, while one closer to the random baseline is worse).
+
+The entire code of this project is available in [this jupyter notebook](https://github.com/alexeygrigorev/mlbookcamp-code/blob/master/course-zoomcamp/04-evaluation/notebook.ipynb).
 
 Add notes from the video (PRs are welcome)
 
@@ -50,11 +51,11 @@ Add notes from the video (PRs are welcome)
    </tr>
 </table>
 
-* [Notes from Peter Ernicke](https://knowmledge.com/2023/10/06/ml-zoomcamp-2023-evaluation-metrics-for-classification-part-5/)
+- [Notes from Peter Ernicke](https://knowmledge.com/2023/10/06/ml-zoomcamp-2023-evaluation-metrics-for-classification-part-5/)
 
 ## Navigation
 
-* [Machine Learning Zoomcamp course](../)
-* [Session 4: Evaluation Metrics for Classification](./)
-* Previous: [Precision and Recall](04-precision-recall.md)
-* Next: [ROC AUC](06-auc.md)
+- [Machine Learning Zoomcamp course](../)
+- [Session 4: Evaluation Metrics for Classification](./)
+- Previous: [Precision and Recall](04-precision-recall.md)
+- Next: [ROC AUC](06-auc.md)
