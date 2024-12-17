@@ -19,6 +19,12 @@ In this algorithm, the full training dataset is divided into **k partitions**, w
 
 In general, if the dataset is large, we should use the hold-out validation dataset strategy. In the other hand, if the dataset is small or we want to know the standard deviation of the model across different folds, we can use the cross-validation approach.
 
+![07-cross-validation](./images/07-cross-validation.png)
+
+`Quote from Note of Peter Ernicke`
+
+In terms of when to use cross-validation versus traditional hold-out validation, for larger datasets, standard hold-out validation is often sufficient. However, if your dataset is smaller or you require insight into the model’s stability and variation across folds, then cross-validation is more appropriate. For larger datasets, consider using fewer splits (e.g., 2 or 3), while for smaller datasets, a higher number of splits (e.g., 10) may be beneficial.
+
 **Libraries, classes and methods:**
 
 - `Kfold(k, s, x)` - sklearn.model_selection class for calculating the cross validation with k folds, s boolean attribute for shuffle decision, and an x random state

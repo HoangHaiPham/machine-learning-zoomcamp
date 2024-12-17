@@ -8,14 +8,20 @@
 
 Confusion table is a way of measuring different types of errors and correct decisions that binary classifiers can make. Considering this information, it is possible to evaluate the quality of the model by different strategies.
 
+![03-confusion-logic-1](./images/03-confusion-logic-1.png)
+
+![03-confusion-logic-2](./images/03-confusion-logic-2.png)
+
 When comes to a prediction of an LR model, each falls into one of four different categories:
 
-* Prediction is that the customer WILL churn. This is known as the **Positive class**
-  * And Customer actually churned - Known as a **True Positive (TP)**
-  * But Customer actually did not churn - Known as a **False Positive (FP)**
-* Prediction is that the customer WILL NOT churn' - This is known as the **Negative class**
-  * Customer did not churn - **True Negative (TN)**
-  * Customer churned - **False Negative (FN)**
+- Prediction is that the customer WILL churn. This is known as the **Positive class**
+  - And Customer actually churned - Known as a **True Positive (TP)**
+  - But Customer actually did not churn - Known as a **False Positive (FP)**
+- Prediction is that the customer WILL NOT churn' - This is known as the **Negative class**
+  - Customer did not churn - **True Negative (TN)**
+  - Customer churned - **False Negative (FN)**
+
+![03-confusion-pie-chart](./images/03-confusion-pie-chart.png)
 
 `Confusion Table` is a way to summarize the above results in a tabular format, as shown below:
 
@@ -48,6 +54,8 @@ When comes to a prediction of an LR model, each falls into one of four different
 
 The **accuracy** corresponds to the sum of TN and TP divided by the total of observations.
 
+![03-confusion-table](./images/03-confusion-table.png)
+
 The code of this project is available in [this jupyter notebook](https://github.com/alexeygrigorev/mlbookcamp-code/blob/master/course-zoomcamp/04-evaluation/notebook.ipynb).
 
 Add notes from the video (PRs are welcome)
@@ -62,11 +70,11 @@ Add notes from the video (PRs are welcome)
    </tr>
 </table>
 
-* [Notes from Peter Ernicke](https://knowmledge.com/2023/10/04/ml-zoomcamp-2023-evaluation-metrics-for-classification-part-3/)
+- [Notes from Peter Ernicke](https://knowmledge.com/2023/10/04/ml-zoomcamp-2023-evaluation-metrics-for-classification-part-3/)
 
 ## Navigation
 
-* [Machine Learning Zoomcamp course](../)
-* [Session 4: Evaluation Metrics for Classification](./)
-* Previous: [Accuracy and dummy model](02-accuracy.md)
-* Next: [Precision and Recall](04-precision-recall.md)
+- [Machine Learning Zoomcamp course](../)
+- [Session 4: Evaluation Metrics for Classification](./)
+- Previous: [Accuracy and dummy model](02-accuracy.md)
+- Next: [Precision and Recall](04-precision-recall.md)
