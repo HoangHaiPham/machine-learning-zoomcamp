@@ -1,6 +1,9 @@
 import requests
 
-url = 'http://localhost:9696/predict'
+host = 'churn-serving-env.....eu-....-1.elasticbeanstalk.com'
+url = f'http://{host}/predict'
+
+# url = 'http://localhost:9696/predict'
 
 customer_id = 'xyz-123'
 
