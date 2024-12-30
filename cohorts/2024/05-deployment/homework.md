@@ -1,26 +1,32 @@
 ## Homework
 
-> Note: sometimes your answer doesn't match one of the options exactly. 
-> That's fine. 
+> Note: sometimes your answer doesn't match one of the options exactly.
+> That's fine.
 > Select the option that's closest to your solution.
 
 > Note: we recommend using python 3.11 in this homework.
 
 ## Question 1
 
-* Install Pipenv
-* What's the version of pipenv you installed?
-* Use `--version` to find out
+- Install Pipenv
+- What's the version of pipenv you installed?
+- Use `--version` to find out
 
+> pip install
+
+> Answer: pipenv, version 2024.4.0
 
 ## Question 2
 
-* Use Pipenv to install Scikit-Learn version 1.5.2
-* What's the first hash for scikit-learn you get in Pipfile.lock?
+- Use Pipenv to install Scikit-Learn version 1.5.2
+- What's the first hash for scikit-learn you get in Pipfile.lock?
 
 > **Note**: you should create an empty folder for homework
-and do it there. 
+> and do it there.
 
+> pipenv install scikit-learn==1.5.2
+
+> sha256: 03b6158efa3faaf1feea3faa884c840ebd61b6484167c711548fce208ea09445
 
 ## Models
 
@@ -42,8 +48,8 @@ model = LogisticRegression().fit(X, y)
 
 And then saved with Pickle. Download them:
 
-* [DictVectorizer](https://github.com/DataTalksClub/machine-learning-zoomcamp/tree/master/cohorts/2024/05-deployment/homework/dv.bin?raw=true)
-* [LogisticRegression](https://github.com/DataTalksClub/machine-learning-zoomcamp/tree/master/cohorts/2024/05-deployment/homework/model1.bin?raw=true)
+- [DictVectorizer](https://github.com/DataTalksClub/machine-learning-zoomcamp/tree/master/cohorts/2024/05-deployment/homework/dv.bin?raw=true)
+- [LogisticRegression](https://github.com/DataTalksClub/machine-learning-zoomcamp/tree/master/cohorts/2024/05-deployment/homework/model1.bin?raw=true)
 
 With `wget`:
 
@@ -53,24 +59,25 @@ wget $PREFIX/model1.bin
 wget $PREFIX/dv.bin
 ```
 
-
 ## Question 3
 
 Let's use these models!
 
-* Write a script for loading these models with pickle
-* Score this client:
+- Write a script for loading these models with pickle
+- Score this client:
 
 ```json
-{"job": "management", "duration": 400, "poutcome": "success"}
+{ "job": "management", "duration": 400, "poutcome": "success" }
 ```
 
-What's the probability that this client will get a subscription? 
+What's the probability that this client will get a subscription?
 
-* 0.359
-* 0.559
-* 0.759
-* 0.959
+- 0.359
+- 0.559
+- 0.759
+- 0.959
+
+> Answer: 0.759
 
 If you're getting errors when unpickling the files, check their checksum:
 
@@ -80,14 +87,13 @@ $ md5sum model1.bin dv.bin
 7d37616e00aa80f2152b8b0511fc2dff  dv.bin
 ```
 
-
 ## Question 4
 
 Now let's serve this model as a web service
 
-* Install Flask and gunicorn (or waitress, if you're on Windows)
-* Write Flask code for serving the model
-* Now score this client using `requests`:
+- Install Flask and gunicorn (or waitress, if you're on Windows)
+- Write Flask code for serving the model
+- Now score this client using `requests`:
 
 ```python
 url = "YOUR_URL"
@@ -97,26 +103,27 @@ requests.post(url, json=client).json()
 
 What's the probability that this client will get a subscription?
 
-* 0.335
-* 0.535
-* 0.735
-* 0.935
+- 0.335
+- 0.535
+- 0.735
+- 0.935
 
+> Answer: 0.335
 
 ## Docker
 
-Install [Docker](https://github.com/DataTalksClub/machine-learning-zoomcamp/blob/master/05-deployment/06-docker.md). 
+Install [Docker](https://github.com/DataTalksClub/machine-learning-zoomcamp/blob/master/05-deployment/06-docker.md).
 We will use it for the next two questions.
 
-For these questions, we prepared a base image: `svizor/zoomcamp-model:3.11.5-slim`. 
+For these questions, we prepared a base image: `svizor/zoomcamp-model:3.11.5-slim`.
 You'll need to use it (see Question 5 for an example).
 
-This image is based on `python:3.11.5-slim` and has a logistic regression model 
-(a different one) as well a dictionary vectorizer inside. 
+This image is based on `python:3.11.5-slim` and has a logistic regression model
+(a different one) as well a dictionary vectorizer inside.
 
 This is how the Dockerfile for this image looks like:
 
-```docker 
+```docker
 FROM python:3.11.5-slim
 WORKDIR /app
 COPY ["model2.bin", "dv.bin", "./"]
@@ -126,20 +133,20 @@ We already built it and then pushed it to [`svizor/zoomcamp-model:3.11.5-slim`](
 
 > **Note**: You don't need to build this docker image, it's just for your reference.
 
-
 ## Question 5
 
 Download the base image `svizor/zoomcamp-model:3.11.5-slim`. You can easily make it by using [docker pull](https://docs.docker.com/engine/reference/commandline/pull/) command.
 
 So what's the size of this base image?
 
-* 45 MB
-* 130 MB
-* 245 MB
-* 330 MB
+- 45 MB
+- 130 MB
+- 245 MB
+- 330 MB
+
+> Answer: 130.49 MB
 
 You can get this information when running `docker images` - it'll be in the "SIZE" column.
-
 
 ## Dockerfile
 
@@ -154,12 +161,11 @@ FROM svizor/zoomcamp-model:3.11.5-slim
 
 Now complete it:
 
-* Install all the dependencies form the Pipenv file
-* Copy your Flask script
-* Run it with Gunicorn 
+- Install all the dependencies form the Pipenv file
+- Copy your Flask script
+- Run it with Gunicorn
 
 After that, you can build your docker image.
-
 
 ## Question 6
 
@@ -175,13 +181,18 @@ requests.post(url, json=client).json()
 
 What's the probability that this client will get a subscription now?
 
-* 0.287
-* 0.530
-* 0.757
-* 0.960
+- 0.287
+- 0.530
+- 0.757
+- 0.960
 
+> docker build -t zoomcamp-week5-homework .
+
+> docker run -it --rm -p 9696:9696 zoomcamp-week5-homework:latest
+
+> AnswerL 0.759
 
 ## Submit the results
 
-* Submit your results here: https://courses.datatalks.club/ml-zoomcamp-2024/homework/hw05
-* If your answer doesn't match options exactly, select the closest one
+- Submit your results here: https://courses.datatalks.club/ml-zoomcamp-2024/homework/hw05
+- If your answer doesn't match options exactly, select the closest one
