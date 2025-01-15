@@ -4,16 +4,21 @@
 
 [Slides](https://www.slideshare.net/AlexeyGrigorev/ml-zoomcamp-6-decision-trees-and-ensemble-learning)
 
-
 ## Notes
 
-Decision Trees are powerful algorithms, capable of fitting complex datasets. The decision trees make predictions based on the bunch of *if/else* statements by splitting a node into two or more sub-nodes.
+Decision Trees are powerful algorithms, capable of fitting complex datasets. The decision trees make predictions based on the bunch of _if/else_ statements by splitting a node into two or more sub-nodes.
+
+![03-decision-trees](./images/03-decision-tree.png)
 
 With versatility, the decision tree is also prone to overfitting. One of the reasons why this algorithm often overfits is its depth. It tends to memorize all the patterns in the train data but struggles to perform well on the unseen data (validation or test set).
 
 To overcome the overfitting problem, we can reduce the complexity of the algorithm by reducing the depth size.
 
+![03-overfitting](./images/03-overfitting.png)
+
 A decision tree with a depth of 1 is called `decision stump` and has only one split from the root.
+
+![03-decision-stump](./images/03-decision-stump.png)
 
 **Classes, functions, and methods**:
 
@@ -21,10 +26,11 @@ A decision tree with a depth of 1 is called `decision stump` and has only one sp
 - `max_depth`: hyperparameter to control the maximum depth of decision tree algorithm.
 - `export_text`: method from `sklearn.tree` class to display the text report showing the rules of a decision tree.
 
-*Note*: we have already covered `DictVectorizer` in session 3 and `roc_auc_score` in session 4 respectively.
+_Note_: we have already covered `DictVectorizer` in session 3 and `roc_auc_score` in session 4 respectively.
+
+![03-decision-tree-max-depth-2](./images/03-decision-tree-max-depth-2.png)
 
 Add notes from the video (PRs are welcome)
-
 
 <table>
    <tr>
@@ -36,13 +42,12 @@ Add notes from the video (PRs are welcome)
    </tr>
 </table>
 
-* [Notes from Peter Ernicke](https://knowmledge.com/2023/10/19/ml-zoomcamp-2023-decision-trees-and-ensemble-learning-part-4/)
-* [Notes from Peter Ernicke](https://knowmledge.com/2023/10/20/ml-zoomcamp-2023-decision-trees-and-ensemble-learning-part-5/)
-
+- [Notes from Peter Ernicke](https://knowmledge.com/2023/10/19/ml-zoomcamp-2023-decision-trees-and-ensemble-learning-part-4/)
+- [Notes from Peter Ernicke](https://knowmledge.com/2023/10/20/ml-zoomcamp-2023-decision-trees-and-ensemble-learning-part-5/)
 
 ## Navigation
 
-* [Machine Learning Zoomcamp course](../)
-* [Session 6: Decision Trees and Ensemble Learning](./)
-* Previous: [Data cleaning and preparation](02-data-prep.md)
-* Next: [Decision tree learning algorithm](04-decision-tree-learning.md)
+- [Machine Learning Zoomcamp course](../)
+- [Session 6: Decision Trees and Ensemble Learning](./)
+- Previous: [Data cleaning and preparation](02-data-prep.md)
+- Next: [Decision tree learning algorithm](04-decision-tree-learning.md)
